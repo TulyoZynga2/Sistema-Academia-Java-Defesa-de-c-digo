@@ -5,10 +5,7 @@ import com.academia.model.enums.NivelIntensidade;
 
 import java.io.Serializable;
 
-/**
- * Classe ABSTRATA que representa um exercício do catálogo da academia.
- * calcularCaloriasEstimadas() é abstrato e cada filha calcula à sua maneira.
- */
+
 public abstract class Exercicio implements Identificavel, Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -22,10 +19,10 @@ public abstract class Exercicio implements Identificavel, Serializable {
         this.intensidade = intensidade;
     }
 
-    /** Estimativa de calorias gastas para uma duração em minutos. */
+    
     public abstract int calcularCaloriasEstimadas(int minutos);
 
-    /** Categoria do exercício (Musculação/Cardio). */
+  
     public abstract String getCategoria();
 
     @Override
