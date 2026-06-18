@@ -8,7 +8,7 @@ import com.academia.util.exceptions.EntidadeNaoEncontradaException;
 
 import java.util.List;
 
-/** Controller do CRUD de Instrutores. */
+
 public class InstrutorController {
 
     private final InstrutorRepository repository = new InstrutorRepository();
