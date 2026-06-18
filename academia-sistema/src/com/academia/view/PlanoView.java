@@ -6,7 +6,7 @@ import com.academia.util.InputUtil;
 
 import java.util.List;
 
-/** View do CRUD de Planos: monta o menu e trata as interações do usuário. */
+
 public class PlanoView {
 
     private final PlanoController controller;
