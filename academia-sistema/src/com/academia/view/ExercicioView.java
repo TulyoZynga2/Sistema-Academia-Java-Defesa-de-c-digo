@@ -7,7 +7,7 @@ import com.academia.util.InputUtil;
 
 import java.util.List;
 
-/** View do CRUD de Exercicios. */
+
 public class ExercicioView {
 
     private final ExercicioController controller;
@@ -79,7 +79,7 @@ public class ExercicioView {
             System.out.println("Nenhum exercicio cadastrado.");
             return;
         }
-        // Polimorfismo: cada exercicio calcula calorias à sua maneira.
+        
         for (Exercicio ex : exercicios) {
             System.out.println(ex + " | ~" + ex.calcularCaloriasEstimadas(30)
                     + " kcal em 30 min");
