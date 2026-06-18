@@ -9,7 +9,7 @@ import com.academia.util.exceptions.DadosInvalidosException;
 
 import java.util.List;
 
-/** Controller do CRUD de Exercicios (catálogo). */
+
 public class ExercicioController {
 
     private final ExercicioRepository repository = new ExercicioRepository();
