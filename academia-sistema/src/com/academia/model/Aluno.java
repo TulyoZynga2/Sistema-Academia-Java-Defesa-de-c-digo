@@ -4,24 +4,14 @@ import com.academia.interfaces.Pagavel;
 
 import java.time.LocalDate;
 
-/**
- * Aluno HERDA de Pessoa e IMPLEMENTA a interface Pagavel.
- *
- * - POLIMORFISMO DE SOBRESCRITA: redefine getTipo() e getResumo().
- * - POLIMORFISMO DE SOBRECARGA: três versões de calcularMensalidade().
- * - CHAVE ESTRANGEIRA: guarda o id do Plano (planoId) ao qual está associado.
- *
- * Observação de modelagem: o Aluno guarda apenas o id do plano (FK) e uma
- * "foto" do valor da mensalidade no momento da matrícula. Assim a camada de
- * modelo não depende dos repositórios, mantendo o MVC desacoplado.
- */
+
 public class Aluno extends Pessoa implements Pagavel {
 
     private static final long serialVersionUID = 1L;
 
     private String matricula;
-    private int planoId;             // chave estrangeira -> Plano
-    private double mensalidadeBase;  // valor do plano no momento da matrícula
+    private int planoId;             
+    private double mensalidadeBase;  
     private LocalDate dataMatricula;
     private boolean ativo;
 
@@ -36,7 +26,7 @@ public class Aluno extends Pessoa implements Pagavel {
         this.ativo = true;
     }
 
-    // ---- Polimorfismo de SOBRESCRITA -------------------------------------
+    
 
     @Override
     public String getTipo() {
@@ -48,7 +38,7 @@ public class Aluno extends Pessoa implements Pagavel {
         return super.getResumo() + " (Matricula " + matricula + ")";
     }
 
-    // ---- Polimorfismo de SOBRECARGA (contrato Pagavel) -------------------
+   
 
     @Override
     public double calcularMensalidade() {
@@ -66,7 +56,7 @@ public class Aluno extends Pessoa implements Pagavel {
         return total - (total * percentualDesconto / 100.0);
     }
 
-    // ---- Getters / Setters ----------------------------------------------
+    
 
     public String getMatricula() { return matricula; }
     public void setMatricula(String matricula) { this.matricula = matricula; }
