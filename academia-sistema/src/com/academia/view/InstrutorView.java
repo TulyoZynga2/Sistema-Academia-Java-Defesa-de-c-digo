@@ -7,7 +7,7 @@ import com.academia.util.InputUtil;
 
 import java.util.List;
 
-/** View do CRUD de Instrutores. */
+
 public class InstrutorView {
 
     private final InstrutorController controller;
