@@ -1,6 +1,6 @@
 package com.academia.model.enums;
 
-/** Meios de pagamento aceitos pela academia. */
+
 public enum FormaPagamento {
     DINHEIRO("Dinheiro"),
     CARTAO_CREDITO("Cartão de Crédito"),
