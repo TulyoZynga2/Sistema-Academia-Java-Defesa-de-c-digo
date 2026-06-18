@@ -14,18 +14,11 @@ import com.academia.view.PagamentoView;
 import com.academia.view.PlanoView;
 import com.academia.view.TreinoView;
 
-/**
- * Ponto de entrada do sistema.
- *
- * Aqui as camadas do MVC são montadas e conectadas (injeção de dependência
- * manual): os Controllers recebem uns aos outros para validar as chaves
- * estrangeiras, e as Views recebem seus Controllers. Os dados são carregados
- * automaticamente do disco quando cada Repositorio é instanciado.
- */
+
 public class Main {
 
     public static void main(String[] args) {
-        // ---- Controllers (camada de regra de negócio) ----
+        
         PlanoController planoController = new PlanoController();
         AlunoController alunoController = new AlunoController(planoController);
         InstrutorController instrutorController = new InstrutorController();
@@ -34,7 +27,7 @@ public class Main {
                 alunoController, instrutorController, exercicioController);
         PagamentoController pagamentoController = new PagamentoController(alunoController);
 
-        // ---- Views (camada de interface) ----
+       
         PlanoView planoView = new PlanoView(planoController);
         AlunoView alunoView = new AlunoView(alunoController, planoController);
         InstrutorView instrutorView = new InstrutorView(instrutorController);
@@ -43,7 +36,7 @@ public class Main {
                 treinoController, alunoController, instrutorController, exercicioController);
         PagamentoView pagamentoView = new PagamentoView(pagamentoController, alunoController);
 
-        // ---- Menu principal ----
+       
         MenuPrincipalView menu = new MenuPrincipalView(
                 planoView, alunoView, instrutorView, exercicioView, treinoView, pagamentoView);
         menu.iniciar();
