@@ -7,21 +7,18 @@ import com.academia.model.enums.StatusPagamento;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-/**
- * Pagamento de mensalidade. Relaciona-se com Aluno por CHAVE ESTRANGEIRA
- * (alunoId) - exemplo de ASSOCIAÇÃO entre CRUDs.
- */
+
 public class Pagamento implements Identificavel, Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private int id;
-    private int alunoId;             // FK -> Aluno
+    private int alunoId;             
     private double valor;
     private LocalDate data;
     private StatusPagamento status;
     private FormaPagamento forma;
-    private String referencia;       // ex.: "Mensalidade 06/2026"
+    private String referencia;       
 
     public Pagamento(int alunoId, double valor, LocalDate data,
                      StatusPagamento status, FormaPagamento forma, String referencia) {
