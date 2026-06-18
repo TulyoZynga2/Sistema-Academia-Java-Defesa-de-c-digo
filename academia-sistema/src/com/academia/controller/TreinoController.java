@@ -7,11 +7,7 @@ import com.academia.util.exceptions.DadosInvalidosException;
 import java.time.LocalDate;
 import java.util.List;
 
-/**
- * Controller do CRUD de Treinos. É o que mais usa CHAVES ESTRANGEIRAS:
- * valida a existência de Aluno, Instrutor e de cada Exercicio antes de
- * vincular ao treino, garantindo integridade referencial.
- */
+
 public class TreinoController {
 
     private final TreinoRepository repository = new TreinoRepository();
@@ -32,7 +28,7 @@ public class TreinoController {
         if (descricao == null || descricao.isBlank()) {
             throw new DadosInvalidosException("A descricao do treino e obrigatoria.");
         }
-        // Validação de FK: aluno e instrutor precisam existir.
+        
         alunoController.exigirAluno(alunoId);
         instrutorController.exigirInstrutor(instrutorId);
 
@@ -42,7 +38,7 @@ public class TreinoController {
 
     public void adicionarExercicio(int treinoId, int exercicioId) {
         Treino treino = repository.buscarPorId(treinoId);
-        // Validação de FK do exercício.
+        
         if (!exercicioController.existe(exercicioId)) {
             throw new DadosInvalidosException(
                     "Exercicio " + exercicioId + " nao existe no catalogo.");
