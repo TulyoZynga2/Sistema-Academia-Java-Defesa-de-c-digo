@@ -10,11 +10,7 @@ import com.academia.util.exceptions.DadosInvalidosException;
 import java.time.LocalDate;
 import java.util.List;
 
-/**
- * Controller do CRUD de Pagamentos. Demonstra o relacionamento entre CRUDs:
- * todo pagamento exige um Aluno válido (FK) e usa o cálculo de mensalidade
- * do próprio aluno (interface Pagavel, com sobrecarga).
- */
+
 public class PagamentoController {
 
     private final PagamentoRepository repository = new PagamentoRepository();
@@ -24,23 +20,19 @@ public class PagamentoController {
         this.alunoController = alunoController;
     }
 
-    /**
-     * Registra um pagamento. Se o valor informado for 0, o sistema calcula
-     * automaticamente a partir do plano do aluno usando o número de meses
-     * (polimorfismo de SOBRECARGA de calcularMensalidade).
-     */
+   
     public Pagamento registrar(int alunoId, double valorInformado, int meses,
                                LocalDate data, FormaPagamento forma,
                                StatusPagamento status, String referencia) {
-        Aluno aluno = alunoController.exigirAluno(alunoId); // valida FK
+        Aluno aluno = alunoController.exigirAluno(alunoId); 
 
         double valor;
         if (valorInformado > 0) {
             valor = valorInformado;
         } else if (meses > 1) {
-            valor = aluno.calcularMensalidade(meses);      // sobrecarga (2 args)
+            valor = aluno.calcularMensalidade(meses);      
         } else {
-            valor = aluno.calcularMensalidade();           // sobrecarga (sem args)
+            valor = aluno.calcularMensalidade();          
         }
 
         if (valor <= 0) {
