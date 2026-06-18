@@ -9,7 +9,7 @@ import com.academia.util.InputUtil;
 import java.time.LocalDate;
 import java.util.List;
 
-/** View do CRUD de Alunos. */
+
 public class AlunoView {
 
     private final AlunoController controller;
