@@ -1,14 +1,11 @@
 package com.academia.model;
 
-/**
- * Instrutor HERDA de Pessoa e demonstra polimorfismo de sobrescrita
- * ao redefinir getTipo() e getResumo() com suas particularidades.
- */
+
 public class Instrutor extends Pessoa {
 
     private static final long serialVersionUID = 1L;
 
-    private String registroProfissional; // ex.: CREF
+    private String registroProfissional; 
     private String especialidade;
     private double salario;
 
