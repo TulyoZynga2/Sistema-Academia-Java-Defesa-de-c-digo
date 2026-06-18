@@ -15,17 +15,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Repositório genérico que centraliza o comportamento de CRUD e a
- * PERSISTÊNCIA via SERIALIZAÇÃO de objetos em arquivo (.dat).
- *
- * O uso de Generics (<T extends Identificavel & Serializable>) evita
- * repetir o mesmo código em cada repositório (Clean Code / reutilização).
- *
- * Atende ao requisito do enunciado: "a luz da barraquinha pode acabar e
- * voltar" — os dados são gravados em disco a cada operação, então nada se
- * perde ao reiniciar o sistema.
- */
+
 public abstract class Repositorio<T extends Identificavel & Serializable> {
 
     private static final String PASTA_DADOS = "dados";
@@ -42,9 +32,9 @@ public abstract class Repositorio<T extends Identificavel & Serializable> {
         carregar();
     }
 
-    // ---------- Operações de CRUD ----------------------------------------
+   
 
-    /** CREATE: atribui id automático, adiciona à coleção e persiste. */
+    
     public T salvar(T entidade) {
         entidade.setId(proximoId++);
         registros.add(entidade);
@@ -54,7 +44,7 @@ public abstract class Repositorio<T extends Identificavel & Serializable> {
         return entidade;
     }
 
-    /** UPDATE: substitui o registro de mesmo id. */
+   
     public void atualizar(T entidade) {
         int indice = localizarIndice(entidade.getId());
         registros.set(indice, entidade);
@@ -63,7 +53,7 @@ public abstract class Repositorio<T extends Identificavel & Serializable> {
                 entidade.getClass().getSimpleName() + " id=" + entidade.getId());
     }
 
-    /** DELETE: remove o registro de id informado. */
+    
     public void deletar(int id) {
         T removido = buscarPorId(id);
         registros.remove(removido);
@@ -72,7 +62,7 @@ public abstract class Repositorio<T extends Identificavel & Serializable> {
                 removido.getClass().getSimpleName() + " id=" + id);
     }
 
-    /** READ (por id): lança exceção se não existir. */
+    
     public T buscarPorId(int id) {
         for (T registro : registros) {
             if (registro.getId() == id) {
@@ -83,7 +73,7 @@ public abstract class Repositorio<T extends Identificavel & Serializable> {
                 "Registro com id " + id + " nao encontrado em " + caminhoArquivo + ".");
     }
 
-    /** READ (todos): retorna cópia da lista para proteger a coleção interna. */
+    
     public List<T> listarTodos() {
         return new ArrayList<>(registros);
     }
@@ -107,13 +97,13 @@ public abstract class Repositorio<T extends Identificavel & Serializable> {
                 "Registro com id " + id + " nao encontrado para alteracao.");
     }
 
-    // ---------- Persistência (serialização) ------------------------------
+    
 
     @SuppressWarnings("unchecked")
     private void carregar() {
         File arquivo = new File(caminhoArquivo);
         if (!arquivo.exists()) {
-            return; // primeira execução: ainda não há dados
+            return; 
         }
         try (ObjectInputStream entrada =
                      new ObjectInputStream(new FileInputStream(arquivo))) {
@@ -135,7 +125,7 @@ public abstract class Repositorio<T extends Identificavel & Serializable> {
         }
     }
 
-    /** Após carregar do disco, garante que novos ids não colidam. */
+    
     private void atualizarProximoId() {
         for (T registro : registros) {
             if (registro.getId() >= proximoId) {
