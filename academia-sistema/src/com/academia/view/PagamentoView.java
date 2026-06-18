@@ -10,7 +10,7 @@ import com.academia.util.InputUtil;
 import java.time.LocalDate;
 import java.util.List;
 
-/** View do CRUD de Pagamentos. */
+
 public class PagamentoView {
 
     private final PagamentoController controller;
