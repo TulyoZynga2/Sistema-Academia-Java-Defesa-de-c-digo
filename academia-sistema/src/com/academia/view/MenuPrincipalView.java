@@ -3,10 +3,7 @@ package com.academia.view;
 import com.academia.util.InputUtil;
 import com.academia.util.LogService;
 
-/**
- * Menu principal do sistema. Orquestra a navegação entre os módulos
- * (CRUDs) e mantém o laço principal de execução.
- */
+
 public class MenuPrincipalView {
 
     private final PlanoView planoView;
@@ -58,7 +55,7 @@ public class MenuPrincipalView {
                     default -> System.out.println("Opcao invalida.");
                 }
             } catch (RuntimeException e) {
-                // Rede de segurança: qualquer erro não tratado nas views.
+                
                 System.out.println(">> Ocorreu um erro: " + e.getMessage());
                 LogService.erro("Erro nao tratado no menu principal", e);
             }
