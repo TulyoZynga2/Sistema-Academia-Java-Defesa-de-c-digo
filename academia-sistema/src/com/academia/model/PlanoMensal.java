@@ -1,6 +1,6 @@
 package com.academia.model;
 
-/** Plano de 1 mês, sem desconto. Implementa os métodos abstratos de Plano. */
+
 public class PlanoMensal extends Plano {
 
     private static final long serialVersionUID = 1L;
@@ -11,7 +11,7 @@ public class PlanoMensal extends Plano {
 
     @Override
     public double calcularValorFinal() {
-        return getValorBase(); // 1 mês, valor cheio
+        return getValorBase(); 
     }
 
     @Override
