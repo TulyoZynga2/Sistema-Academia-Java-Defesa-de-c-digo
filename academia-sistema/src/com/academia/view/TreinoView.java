@@ -11,7 +11,7 @@ import com.academia.util.InputUtil;
 import java.time.LocalDate;
 import java.util.List;
 
-/** View do CRUD de Treinos. Resolve as FKs para exibir nomes ao usuário. */
+
 public class TreinoView {
 
     private final TreinoController controller;
@@ -74,7 +74,7 @@ public class TreinoView {
             return;
         }
         for (Treino treino : treinos) {
-            // Resolve as chaves estrangeiras para exibir nomes legíveis.
+            
             String aluno = alunoController.buscarPorId(treino.getAlunoId()).getNome();
             String instrutor = instrutorController.buscarPorId(treino.getInstrutorId()).getNome();
             System.out.println("\nTreino #" + treino.getId() + " - " + treino.getDescricao()
