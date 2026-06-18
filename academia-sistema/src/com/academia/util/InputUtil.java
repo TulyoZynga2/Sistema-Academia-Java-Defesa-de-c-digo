@@ -7,10 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
-/**
- * Centraliza a leitura de dados do teclado, com validação e conversão de tipos.
- * Evita repetição de código de Scanner em todas as Views (Clean Code).
- */
+
 public final class InputUtil {
 
     private static final Scanner SCANNER = new Scanner(System.in);
@@ -63,7 +60,7 @@ public final class InputUtil {
         }
     }
 
-    /** Pausa a execução até o usuário pressionar ENTER. */
+    
     public static void pausar() {
         System.out.print("\nPressione ENTER para continuar...");
         SCANNER.nextLine();
