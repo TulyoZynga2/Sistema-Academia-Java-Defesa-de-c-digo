@@ -1,6 +1,6 @@
 package com.academia.model.enums;
 
-/** Situação de um pagamento dentro do sistema. */
+
 public enum StatusPagamento {
     PENDENTE("Pendente"),
     PAGO("Pago"),
