@@ -7,13 +7,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Treino prescrito a um aluno por um instrutor.
- *
- * Demonstra AGREGAÇÃO: o treino se relaciona com Aluno, Instrutor e vários
- * Exercicios que existem independentemente dele. O vínculo é feito por
- * CHAVES ESTRANGEIRAS (ids), e a lista de exercícios usa COLEÇÃO (List).
- */
+
 public class Treino implements Identificavel, Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -21,9 +15,9 @@ public class Treino implements Identificavel, Serializable {
     private int id;
     private String descricao;
     private LocalDate data;
-    private int alunoId;                  // FK -> Aluno
-    private int instrutorId;              // FK -> Instrutor
-    private List<Integer> exercicioIds;   // FK -> Exercicio (vários)
+    private int alunoId;                  
+    private int instrutorId;              
+    private List<Integer> exercicioIds;   
 
     public Treino(String descricao, LocalDate data, int alunoId, int instrutorId) {
         this.descricao = descricao;
