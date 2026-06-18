@@ -10,10 +10,7 @@ import com.academia.util.exceptions.EntidadeNaoEncontradaException;
 import java.time.LocalDate;
 import java.util.List;
 
-/**
- * Controller do CRUD de Alunos. Valida os dados e garante a integridade
- * da CHAVE ESTRANGEIRA: só matricula em um plano que realmente existe.
- */
+
 public class AlunoController {
 
     private final AlunoRepository repository = new AlunoRepository();
@@ -31,7 +28,7 @@ public class AlunoController {
         if (repository.existeCpf(cpf)) {
             throw new DadosInvalidosException("Ja existe um aluno com o CPF " + cpf + ".");
         }
-        // Integridade de FK: o plano precisa existir.
+     
         Plano plano = planoController.buscarPorId(planoId);
 
         Aluno aluno = new Aluno(nome, cpf, telefone, endereco, matricula,
@@ -67,7 +64,7 @@ public class AlunoController {
         return repository.listarTodos();
     }
 
-    /** Usado pela camada financeira para validar a FK antes de cobrar. */
+    
     public Aluno exigirAluno(int id) {
         if (!repository.existe(id)) {
             throw new EntidadeNaoEncontradaException(
