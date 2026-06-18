@@ -1,10 +1,6 @@
 package com.academia.model;
 
-/**
- * Plano de 3 meses com 10% de desconto sobre o total.
- * Mesma assinatura de calcularValorFinal(), comportamento diferente
- * do PlanoMensal -> polimorfismo de sobrescrita.
- */
+
 public class PlanoTrimestral extends Plano {
 
     private static final long serialVersionUID = 1L;
