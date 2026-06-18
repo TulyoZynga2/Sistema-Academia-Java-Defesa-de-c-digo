@@ -10,7 +10,7 @@ public class PagamentoRepository extends Repositorio<Pagamento> {
         super("pagamentos.dat");
     }
 
-    /** Lista todos os pagamentos de um aluno (uso da chave estrangeira). */
+   
     public List<Pagamento> listarPorAluno(int alunoId) {
         List<Pagamento> resultado = new ArrayList<>();
         for (Pagamento pagamento : registros) {
