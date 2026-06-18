@@ -8,10 +8,7 @@ import com.academia.util.exceptions.DadosInvalidosException;
 
 import java.util.List;
 
-/**
- * Controller do CRUD de Planos. Faz a ponte entre View e Repository,
- * aplicando validações de negócio antes de persistir.
- */
+
 public class PlanoController {
 
     private final PlanoRepository repository = new PlanoRepository();
