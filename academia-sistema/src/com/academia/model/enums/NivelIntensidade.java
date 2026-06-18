@@ -1,6 +1,6 @@
 package com.academia.model.enums;
 
-/** Nível de intensidade de um exercício, usado no cálculo de calorias. */
+
 public enum NivelIntensidade {
     BAIXA("Baixa", 1.0),
     MODERADA("Moderada", 1.5),
