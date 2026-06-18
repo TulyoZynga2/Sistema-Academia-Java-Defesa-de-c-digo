@@ -2,11 +2,7 @@ package com.academia.model;
 
 import java.io.Serializable;
 
-/**
- * Endereco faz parte de Pessoa por COMPOSIÇÃO: ele é criado e destruído
- * junto com a Pessoa, não existe sozinho no sistema e é serializado
- * junto do objeto que o contém.
- */
+
 public class Endereco implements Serializable {
 
     private static final long serialVersionUID = 1L;
