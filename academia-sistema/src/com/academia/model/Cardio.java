@@ -2,7 +2,7 @@ package com.academia.model;
 
 import com.academia.model.enums.NivelIntensidade;
 
-/** Exercício cardiovascular, medido por distância. */
+
 public class Cardio extends Exercicio {
 
     private static final long serialVersionUID = 1L;
@@ -16,7 +16,7 @@ public class Cardio extends Exercicio {
 
     @Override
     public int calcularCaloriasEstimadas(int minutos) {
-        // base ~8 cal/min * fator de intensidade (cardio gasta mais)
+        
         return (int) Math.round(8 * minutos * getIntensidade().getFatorCalorico());
     }
 
